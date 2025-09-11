@@ -42,8 +42,9 @@ loop do
 end
 
 puts "\nScanned products:"
-checkout_items = checkout.instance_variable_get(:@items)
-checkout_items.each { |item| puts "#{item.name} (£#{item.price})" }
+checkout.items.each { |item| puts "#{item.name} (£#{item.price})" }
+checkout_total = checkout.total
 
-puts "\nTotal to pay: £#{checkout.total}"
-puts "Thank you for shopping with us!"
+puts "\nTotal of discounts: £#{checkout_total[:discount]}"
+puts "Total to pay: £#{checkout_total[:total]}"
+puts "\nThank you for shopping with us!"

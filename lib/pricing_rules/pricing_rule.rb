@@ -1,3 +1,5 @@
+# Abstract base class for all pricing rules
+# Ensures all rules implement the `apply` method
 class PricingRule
   attr_reader :product_code
 

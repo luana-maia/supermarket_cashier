@@ -1,5 +1,5 @@
 require_relative 'pricing_rule'
-
+# Discount applied when buying a minimum quantity of a product
 class BulkDiscount < PricingRule
   def initialize(product_code, min_quantity, discounted_price)
     super(product_code)
@@ -10,6 +10,7 @@ class BulkDiscount < PricingRule
   def apply(items)
     eligible_items = items.select { |item| item.code == product_code }
     if eligible_items.count >= @min_quantity
+      # Calculate total discount: difference between original and discounted prices
       original_total = eligible_items.sum(&:price)
       discounted_total = eligible_items.count * @discounted_price
       original_total - discounted_total
