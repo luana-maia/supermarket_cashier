@@ -113,4 +113,4 @@ supermarket_cashier/
 - RSpec (for TDD)
 
 ## 📄 License
-This project is for technical evaluation purposes only.
+Internal / educational (adjust as needed).
